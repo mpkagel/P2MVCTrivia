@@ -1,0 +1,42 @@
+﻿@model P2.MVC.ViewModels.UsersViewModel
+
+@{ ViewData["Title"] = "AccountDetails"; }
+
+<h1>AccountDetails</h1>
+
+<div>
+    <h4>UsersViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PointTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PointTotal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccountType)
+        </dd>
+    </dl>
+</div>
