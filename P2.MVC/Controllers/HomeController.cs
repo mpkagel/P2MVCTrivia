@@ -56,7 +56,7 @@ namespace P2.MVC.Controllers
             var response = await HttpClient.SendAsync(request);
 
             var jsonString = await response.Content.ReadAsStringAsync();
-
+            ViewData["questionData"] = jsonString;
             //ApiUsersModel user = JsonConvert.DeserializeObject<ApiUsersModel>(jsonString);
 
             //UsersViewModel viewModel = new UsersViewModel
@@ -70,7 +70,7 @@ namespace P2.MVC.Controllers
             //    AccountType = user.AccountType
             //};
 
-            return View(jsonString);
+            return View();
         }
 
         public ActionResult Login()

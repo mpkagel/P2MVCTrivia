@@ -16,14 +16,14 @@ namespace P2.MVC.Filters
     public class GetAccountDetailsFilter : IAsyncActionFilter
     {
         private readonly IConfiguration _configuration;
-        //private readonly ILogger<HomeController> _logger;
-        private readonly Logger logger;
+        private readonly ILogger<HomeController> _logger;
+        //private readonly Logger logger;
 
-        public GetAccountDetailsFilter(IConfiguration configuration)//, ILogger<HomeController> logger)
+        public GetAccountDetailsFilter(IConfiguration configuration, ILogger<HomeController> logger)
         {
             _configuration = configuration;
-            //_logger = logger;
-            logger = LogManager.GetLogger("allfile");
+            _logger = logger;
+            //logger = LogManager.GetLogger("allfile");
         }
 
         public async Task OnActionExecutionAsync(
@@ -33,7 +33,7 @@ namespace P2.MVC.Filters
             // do something before the action executes
             // if the controller is an aservicecontroller, then
             // fetch the details, otherwise, do nothing.
-            logger.Info("Running Get Account Filter");
+            //logger.Info("Running Get Account Filter");
             if (context.Controller is AServiceController controller)
             {
                 HttpRequestMessage request = controller.CreateRequestToService(
