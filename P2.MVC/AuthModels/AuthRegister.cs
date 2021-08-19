@@ -36,7 +36,7 @@ namespace P2.MVC.AuthModels
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
 
-        //[BindNever]
+        [BindNever]
         [Display(Name = "Account Type")]
         public bool AccountType { get; set; } = false;
     }

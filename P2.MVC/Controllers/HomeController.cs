@@ -33,10 +33,6 @@ namespace P2.MVC.Controllers
             return View();
         }
 
-        //public IActionResult Privacy()
-        //{
-        //    return View();
-        //}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(AuthLogin login)
