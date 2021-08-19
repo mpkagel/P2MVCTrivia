@@ -44,30 +44,34 @@
 </span>}*@
             <button class="btn btn-outline-info text-light" type="submit" style="font-size: 1.4em;">Logout</button>
         </form>}
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Login" style="font-size: 1.4em;">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="http://localhost:4200" style="font-size: 1.4em;">Quizzes (Angular)</a>
-                        </li>
-                        @*<li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>*@
-                        @if (account != null)
-                        {
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="UserAccount" style="font-size: 1.4em;">Edit/Delete Account</a>
-            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="AccountDetails" style="font-size: 1.4em;">Account</a>
-                            </li> @*<form class="form-inline" asp-controller="Home" asp-action="UserAccount">
-                                                    <button class="btn btn-outline-info text-light" type="submit" style="font-size: 1.4em;">Edit/Delete Account</button>
-                                                </form>
-                                                <form class="form-inline" asp-controller="Home" asp-action="AccountDetails">
-                                                    <button class="btn btn-outline-info text-light" type="submit" style="font-size: 1.4em;">Account</button>
-                                                </form>*@}
-                    </ul>
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Login" style="font-size: 1.4em;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="http://localhost:4200" style="font-size: 1.4em;">Quizzes (Angular)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Questions" style="font-size: 1.4em;">Questions</a>
+                    </li>
+                    @*<li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>*@
+                    @if (account != null)
+                    {
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="UserAccount" style="font-size: 1.4em;">Edit/Delete Account</a>
+                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="AccountDetails" style="font-size: 1.4em;">Account</a>
+                                </li>
+                                @*<form class="form-inline" asp-controller="Home" asp-action="UserAccount">
+                        <button class="btn btn-outline-info text-light" type="submit" style="font-size: 1.4em;">Edit/Delete Account</button>
+                    </form>
+                    <form class="form-inline" asp-controller="Home" asp-action="AccountDetails">
+                        <button class="btn btn-outline-info text-light" type="submit" style="font-size: 1.4em;">Account</button>
+                    </form>*@}
+                </ul>
                 </div>
             </div>
         </nav>

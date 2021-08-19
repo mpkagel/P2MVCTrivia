@@ -27,6 +27,52 @@ namespace P2.MVC.Controllers
             : base(httpClient, configuration)
         { logger = LogManager.GetLogger("allfile"); }
 
+        [HttpGet]
+        public async Task<ActionResult> Questions()
+        {
+            //HttpRequestMessage request = controller.CreateRequestToService(
+            //HttpMethod.Get, "api/Questions/25");
+
+            //HttpResponseMessage response = await controller.HttpClient.SendAsync(request);
+
+            //if (!response.IsSuccessStatusCode)
+            //{
+            //    // setting "Result" in a filter short-circuits the rest
+            //    // of the MVC pipeline
+            //    // but i won't do that, i should just log it.
+            //}
+            //else
+            //{
+            //    var jsonString = await response.Content.ReadAsStringAsync();
+            //    AuthAccountDetails details = JsonConvert.DeserializeObject<AuthAccountDetails>(jsonString);
+            //    controller.ViewData["accountDetails"] = details;
+            //    controller.Account = details;
+            //}
+            
+            //logger.Info("Running root Login");
+            //return View();
+
+            var request = CreateRequestToService(HttpMethod.Get, $"/api/Questions/25");
+            var response = await HttpClient.SendAsync(request);
+
+            var jsonString = await response.Content.ReadAsStringAsync();
+
+            //ApiUsersModel user = JsonConvert.DeserializeObject<ApiUsersModel>(jsonString);
+
+            //UsersViewModel viewModel = new UsersViewModel
+            //{
+            //    FirstName = user.FirstName,
+            //    LastName = user.LastName,
+            //    PW = user.PW,
+            //    Username = user.Username,
+
+            //    PointTotal = user.PointTotal,
+            //    AccountType = user.AccountType
+            //};
+
+            return View(jsonString);
+        }
+
         public ActionResult Login()
         {
             logger.Info("Running root Login");
