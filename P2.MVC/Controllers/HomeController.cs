@@ -19,63 +19,20 @@ namespace P2.MVC.Controllers
 {
     public class HomeController : AServiceController
     {
-        //private readonly ILogger<HomeController> _logger;
-        private readonly Logger logger;
+        private readonly ILogger<HomeController> _logger;
+        //private readonly Logger logger;
 
-        public HomeController(HttpClient httpClient, IConfiguration configuration)//,
-            //ILogger<HomeController> logger)
+        public HomeController(HttpClient httpClient, IConfiguration configuration,
+            ILogger<HomeController> logger)
             : base(httpClient, configuration)
-        { logger = LogManager.GetLogger("allfile"); }
+        { _logger = logger; }
+            //logger = LogManager.GetLogger("allfile"); }
 
-        [HttpGet]
-        public async Task<ActionResult> Questions()
-        {
-            //HttpRequestMessage request = controller.CreateRequestToService(
-            //HttpMethod.Get, "api/Questions/25");
-
-            //HttpResponseMessage response = await controller.HttpClient.SendAsync(request);
-
-            //if (!response.IsSuccessStatusCode)
-            //{
-            //    // setting "Result" in a filter short-circuits the rest
-            //    // of the MVC pipeline
-            //    // but i won't do that, i should just log it.
-            //}
-            //else
-            //{
-            //    var jsonString = await response.Content.ReadAsStringAsync();
-            //    AuthAccountDetails details = JsonConvert.DeserializeObject<AuthAccountDetails>(jsonString);
-            //    controller.ViewData["accountDetails"] = details;
-            //    controller.Account = details;
-            //}
-            
-            //logger.Info("Running root Login");
-            //return View();
-
-            var request = CreateRequestToService(HttpMethod.Get, $"/api/Questions/25");
-            var response = await HttpClient.SendAsync(request);
-
-            var jsonString = await response.Content.ReadAsStringAsync();
-            ViewData["questionData"] = jsonString;
-            //ApiUsersModel user = JsonConvert.DeserializeObject<ApiUsersModel>(jsonString);
-
-            //UsersViewModel viewModel = new UsersViewModel
-            //{
-            //    FirstName = user.FirstName,
-            //    LastName = user.LastName,
-            //    PW = user.PW,
-            //    Username = user.Username,
-
-            //    PointTotal = user.PointTotal,
-            //    AccountType = user.AccountType
-            //};
-
-            return View();
-        }
+        
 
         public ActionResult Login()
         {
-            logger.Info("Running root Login");
+            //logger.Info("Running root Login");
             return View();
         }
 
@@ -214,7 +171,7 @@ namespace P2.MVC.Controllers
         // GET: /Home/Register
         public ActionResult Register()
         {
-            logger.Info("Running Register");
+            //logger.Info("Running Register");
             return View();
         }
 
