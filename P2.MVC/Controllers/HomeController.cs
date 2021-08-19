@@ -212,12 +212,12 @@ namespace P2.MVC.Controllers
                 return View(register);
             }
 
-            var success = PassCookiesToClient(response);
-            if (!success)
-            {
-                ModelState.AddModelError("", "Cookie error");
-                return View(register);
-            }
+            //var success = PassCookiesToClient(response);
+            //if (!success)
+            //{
+            //    ModelState.AddModelError("", "Cookie error");
+            //    return View(register);
+            //}
 
             // login success
             return RedirectToAction("Login", "Home");
