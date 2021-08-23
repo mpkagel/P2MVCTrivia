@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'p2mvctrivia'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F0190CF1852D433CA2459DE5B4C3ADAF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_49E6B91489BE41BCA523D3BDB172AE55 }}
           package: .
