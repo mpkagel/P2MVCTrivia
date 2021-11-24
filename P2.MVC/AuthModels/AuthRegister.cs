@@ -27,7 +27,7 @@ namespace P2.MVC.AuthModels
         [Required]
         [MinLength(6)]
         [RegularExpression(@"(.*[a-z].*)(.*[0-9].*)",
-            ErrorMessage = "The password must have a lowercase letter and a digit.")]
+            ErrorMessage = "The password must have a lowercase letter and at least one digit after the letter.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
